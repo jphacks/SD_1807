@@ -1,5 +1,5 @@
 # サンプル（プロダクト名）
-akihiko_Fukuchiiii
+秋田さん応用情報技術者試験がん＠ん＾；b＠あ＾；r＾絵；＾；＠￥
 
 [![Product Name](image.png)](https://www.youtube.com/watch?v=G5rULR53uMk)
 
