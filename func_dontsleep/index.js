@@ -75,19 +75,32 @@ const FinishIntentHandler = {
       const URL = "http://www.rec-art.jp/music/wav/noise/white-noise-96000hz.wav"
       return handlerInput.responseBuilder.audioPlay(URL).audioPlayReprompt(URL);//.getResponse();
       //return handlerInput.responseBuilder.speak(msg).getResponse();
-    }else if(finish == "おはよう"){
-      //sayhello(handlerInput)
-       startfnc(handlerInput);
-       var msg = "ばあい";
-      return handlerInput.responseBuilder.speak(msg).reprompt(msg).getResponse();
-    }else{
+    }
+    /*else{
       var msg = `わーーーあああ。`;
       return handlerInput.responseBuilder.speak(msg).reprompt(msg).getResponse();
-    }
+    }*/
   }
 }
 
 
+const WakeIntentHandler = {
+  canHandle: function(handlerInput){
+    return handlerInput.requestEnvelope.isMatch('WakeIntent');
+  },
+  handle: function(handlerInput){
+    // slotsを取得
+    var wake = handlerInput.requestEnvelope.request.intent.slots.wake.value;
+    // clovaに話す内容を作成。
+    var msg = `作業を${wake}．がんばってくださいね．`;
+    //const URL = "http://www.rec-art.jp/music/wav/noise/white-noise-96000hz.wav";
+    //return handlerInput.responseBuilder.speak(msg).audioPlay(URL).audioPlayReprompt(URL);//.getResponse();
+    return handlerInput.responseBuilder.speak(msg).reprompt(msg).getResponse();
+
+  }
+}
+
+/*
 function startfnc(handlerInput)
 {
   var count = 0;
@@ -100,7 +113,7 @@ function startfnc(handlerInput)
   }
   var msg = "繰り返しはおわりです";
   return handlerInput.responseBuilder.speak(msg).reprompt(msg).getResponse();
-}
+}*/
 /*
     //関数hello()を5秒間隔で呼び出す
   var id = setInterval(function(){
@@ -138,12 +151,12 @@ const errorHandler = {
     return true;
   },
   handle: function(handlerInput){
-    var msg = "わかんないや...";
+    var msg = "えらー";
     return handlerInput.responseBuilder.speak(msg).reprompt(msg).getResponse();
   }
 }
 
 exports.handler = clova.extensionBuilders
-  .addRequestHandlers(LaunchRequestHandler,SessionEndedRequestHandler,ClovaGuideIntentHandler,FinishIntentHandler)
+  .addRequestHandlers(LaunchRequestHandler,SessionEndedRequestHandler,ClovaGuideIntentHandler,FinishIntentHandler,WakeIntentHandler)
   .addErrorHandlers(errorHandler)
   .lambda()
