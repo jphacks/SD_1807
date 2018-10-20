@@ -14,12 +14,6 @@ function formatDate(date) {
 }
 
 
-
-
-
-
-
-
 const LaunchRequestHandler = {
   canHandle: function(handlerInput){
     return handlerInput.requestEnvelope.isMatch('LaunchRequest');
