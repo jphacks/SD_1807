@@ -57,7 +57,7 @@ const FinishIntentHandler = {
     
     // clovaに話す内容を作成。
     //var msg = `${constellation}ですね。${constellation}の今日の運勢は${fortune}です。`;
-    if(finish == "おやすみ"||"ねむたい"){
+    if(finish == "おやすみ"){
       saydontsleep(handlerInput,finish);
       //setTimeout(function(){music('hoge')},5000);
       sleep(5, function () {
@@ -76,7 +76,8 @@ const FinishIntentHandler = {
     }else if(finish == "音楽"){
       //var msg = `あああ`;
       //const URL = "http://idontwork.asia/bgm/audio.mp3";
-      const URL = "http://www.rec-art.jp/music/wav/noise/white-noise-96000hz.wav"
+      const URL = "https://maoudamashii.jokersounds.com/music/song/mp3/song_shiho_shining_star.mp3";
+      //http://www.rec-art.jp/music/wav/noise/white-noise-96000hz.wav"
       return handlerInput.responseBuilder.audioPlay(URL).audioPlayReprompt(URL);//.getResponse();
       //return handlerInput.responseBuilder.speak(msg).getResponse();
     }
@@ -98,9 +99,13 @@ const WakeIntentHandler = {
     // clovaに話す内容を作成。
     var msg = `作業を${wake}．がんばってくださいね．`;
     
-    //const URL = "http://www.rec-art.jp/music/wav/noise/white-noise-96000hz.wav";
-    //return handlerInput.responseBuilder.speak(msg).audioPlay(URL).audioPlayReprompt(URL);//.getResponse();
-    return handlerInput.responseBuilder.speak(msg).reprompt(msg).getResponse();
+    // full 
+    const URL = "http://www.ne.jp/asahi/music/myuu/wave/musicbox.wav";
+    const URL2 = "http://www.ne.jp/asahi/music/myuu/wave/springsonate.mp3"
+    const URL3 ="http://www.ne.jp/asahi/music/myuu/wave/eine.mp3";
+   
+    return handlerInput.responseBuilder.speak(msg).audioPlay(URL).audioPlayReprompt(URL).audioPlay(URL2).audioPlayReprompt(URL2).audioPlay(URL3).audioPlayReprompt(URL3);//.getResponse();
+    //return handlerInput.responseBuilder.speak(msg).reprompt(msg).getResponse();
 
   }
 }
