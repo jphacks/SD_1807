@@ -59,7 +59,9 @@ const FinishIntentHandler = {
     if(finish == "おやすみ"){
       saydontsleep(handlerInput,finish);
       //setTimeout(function(){music('hoge')},5000);
-      dontsleep(handlerInput);
+      var countup = dontsleep(handlerInput);
+      setTimeout(countup, 5000);
+      //dontsleep(handlerInput);
       var msg ="おはようございます";
 
       return handlerInput.responseBuilder.speak(msg).reprompt(msg).getResponse();
@@ -87,6 +89,7 @@ const WakeIntentHandler = {
     var wake = handlerInput.requestEnvelope.request.intent.slots.wake.value;
     // clovaに話す内容を作成。
     var msg = `作業を${wake}．がんばってくださいね．`;
+    
     //const URL = "http://www.rec-art.jp/music/wav/noise/white-noise-96000hz.wav";
     //return handlerInput.responseBuilder.speak(msg).audioPlay(URL).audioPlayReprompt(URL);//.getResponse();
     return handlerInput.responseBuilder.speak(msg).reprompt(msg).getResponse();
@@ -127,13 +130,13 @@ function sayhello(handlerInput){
 //起きる音楽を流す関数
 function dontsleep(handlerInput){
   const URL = "http://idontwork.asia/bgm/audio.mp3"
-  return handlerInput.responseBuilder.audioPlay(URL).audioPlayReprompt(URL);
+  return handlerInput.responseBuilder.audioPlay(URL).audioPlayReprompt(URL).getResponse();
 }
 
 
 //起きる音楽を流す関数
 function saydontsleep(handlerInput,finish){
-  const msg  = `まだ${finish}の時間ではありません．起きてください．5秒後に音楽が流れます`;
+  const msg  = `まだ${finish}の時間ではありません．起きてください．このあとに音楽が流れます`;
   
   return handlerInput.responseBuilder.speak(msg).reprompt(msg);
 }
