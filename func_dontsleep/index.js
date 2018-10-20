@@ -60,17 +60,18 @@ const FinishIntentHandler = {
     if(finish == "おやすみ"){
       saydontsleep(handlerInput,finish);
       //setTimeout(function(){music('hoge')},5000);
-      sleep(5, function () {
+      /*sleep(5, function () {
    
         console.log('5秒経過しました！');
      
-    });  
-      var countup = dontsleep(handlerInput);
-      setTimeout(countup, 5000);
+    }); 
+    */ 
+      dontsleep(handlerInput);
+      
       
       
       //dontsleep(handlerInput);
-      var msg ="おはようございます";
+      var msg ="おはようございます！．目は覚めましたか？がんばってくださいね．";
 
       return handlerInput.responseBuilder.speak(msg).reprompt(msg).getResponse();
     }else if(finish == "音楽"){
@@ -169,7 +170,8 @@ function sayhello(handlerInput){
 
 //起きる音楽を流す関数
 function dontsleep(handlerInput){
-  const URL = "http://idontwork.asia/bgm/audio.mp3"
+  //const URL = "http://idontwork.asia/bgm/audio.mp3"
+  const URL = "http://www.ne.jp/asahi/music/myuu/wave/loop1.wav";
   return handlerInput.responseBuilder.audioPlay(URL).audioPlayReprompt(URL);//.getResponse();
 }
 
