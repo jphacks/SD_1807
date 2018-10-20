@@ -44,7 +44,7 @@ const ClovaGuideIntentHandler = {
   }
 }
 
-
+const  URL = 'https://github.com/jphacks/SD_1807/blob/master/Music/mozart.mp3';
 const FinishIntentHandler = {
   canHandle: function(handlerInput){
     return handlerInput.requestEnvelope.isMatch('FinishIntent');
@@ -59,7 +59,7 @@ const FinishIntentHandler = {
     if(finish == "おやすみ"){
       var msg = `${finish}です。`;
     }else if("音楽"){
-     const  URL = "https://github.com/jphacks/SD_1807/blob/master/Music/White_Noise.mp3";
+    
       return handlerInput.responseBuilder.speak(URL).getResponse();
     }else{
       var msg = `わーーーあああ。`;
