@@ -5,7 +5,7 @@ const LaunchRequestHandler = {
     return handlerInput.requestEnvelope.isMatch('LaunchRequest');
   },
   handle: function(handlerInput){
-    var msg = "あなたの星座を教えてください";
+    var msg = "今夜は寝させませんよ";
     return handlerInput.responseBuilder.speak(msg).reprompt(msg).getResponse();
   }
 }
