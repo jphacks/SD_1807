@@ -4,6 +4,7 @@
 [![Product Name](image.png)](https://www.youtube.com/watch?v=G5rULR53uMk)
 
 ## 製品概要
+
 ### Sleeping Tech
 
 ### 背景
@@ -22,9 +23,13 @@ https://www.google.co.jp/search?q=%E7%9D%A1%E7%9C%A0%E3%83%93%E3%82%B8%E3%83%8D%
 こちらに製品の概要・特徴について説明を記載してください。
 
 ### 特長
-
+快眠or起き続ける
+選択
 #### 1. 特長1
-
+[快眠]
+user  ねぇクローバー？　眠ろうと思う
+clova 快眠サポートを始めます
+user  全身に力を
 #### 2. 特長2
 
 #### 3. 特長3 
