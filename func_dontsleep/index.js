@@ -71,7 +71,7 @@ const FinishIntentHandler = {
       
       
       //dontsleep(handlerInput);
-      var msg ="おはようございます！．目は覚めましたか？がんばってくださいね．";
+      var msg ="おはようございます！．目は覚めましたか？もし眠気が覚めていなければもう一度眠たいといってください．がんばってくださいね．";
 
       return handlerInput.responseBuilder.speak(msg).reprompt(msg).getResponse();
     }else if(finish == "音楽"){
