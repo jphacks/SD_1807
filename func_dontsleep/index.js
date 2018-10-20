@@ -14,6 +14,7 @@ function formatDate(date) {
 }
 
 
+
 const LaunchRequestHandler = {
   canHandle: function(handlerInput){
     return handlerInput.requestEnvelope.isMatch('LaunchRequest');
@@ -56,11 +57,18 @@ const FinishIntentHandler = {
     
     // clovaに話す内容を作成。
     //var msg = `${constellation}ですね。${constellation}の今日の運勢は${fortune}です。`;
-    if(finish == "おやすみ"){
+    if(finish == "おやすみ"||"ねむたい"){
       saydontsleep(handlerInput,finish);
       //setTimeout(function(){music('hoge')},5000);
+      sleep(5, function () {
+   
+        console.log('5秒経過しました！');
+     
+    });  
       var countup = dontsleep(handlerInput);
       setTimeout(countup, 5000);
+      
+      
       //dontsleep(handlerInput);
       var msg ="おはようございます";
 
@@ -120,6 +128,31 @@ function startfnc(handlerInput)
   },1000);*/
 
 
+  // setIntervalを使う方法
+  function sleep(waitSec, callbackFunc) {
+   
+      // 経過時間（秒）
+      var spanedSec = 0;
+   
+      // 1秒間隔で無名関数を実行
+      var id = setInterval(function () {
+   
+          spanedSec++;
+   
+          // 経過時間 >= 待機時間の場合、待機終了。
+          if (spanedSec >= waitSec) {
+   
+              // タイマー停止
+              clearInterval(id);
+   
+              // 完了時、コールバック関数を実行
+              if (callbackFunc) callbackFunc();
+          }
+      }, 1000);
+   
+  }
+   
+   
 
 
 function sayhello(handlerInput){
@@ -130,9 +163,8 @@ function sayhello(handlerInput){
 //起きる音楽を流す関数
 function dontsleep(handlerInput){
   const URL = "http://idontwork.asia/bgm/audio.mp3"
-  return handlerInput.responseBuilder.audioPlay(URL).audioPlayReprompt(URL).getResponse();
+  return handlerInput.responseBuilder.audioPlay(URL).audioPlayReprompt(URL);//.getResponse();
 }
-
 
 //起きる音楽を流す関数
 function saydontsleep(handlerInput,finish){
