@@ -67,9 +67,7 @@ const FinishIntentHandler = {
     }); 
     */ 
       dontsleep(handlerInput);
-      
-      
-      
+ 
       //dontsleep(handlerInput);
       var msg ="おはようございます！．目は覚めましたか？もし眠気が覚めていなければもう一度眠たいといってください．がんばってくださいね．";
 
