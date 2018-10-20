@@ -102,9 +102,11 @@ const WakeIntentHandler = {
     // full 
     const URL = "http://www.ne.jp/asahi/music/myuu/wave/musicbox.wav";
     const URL2 = "http://www.ne.jp/asahi/music/myuu/wave/springsonate.mp3"
-    const URL3 ="http://www.ne.jp/asahi/music/myuu/wave/eine.mp3";
+    const URL3 = "http://www.ne.jp/asahi/music/myuu/wave/eine.mp3";
+    const URL4 = "http://www.ne.jp/asahi/music/myuu/wave/menuettm.mp3";
    
-    return handlerInput.responseBuilder.speak(msg).audioPlay(URL).audioPlayReprompt(URL).audioPlay(URL2).audioPlayReprompt(URL2).audioPlay(URL3).audioPlayReprompt(URL3);//.getResponse();
+    //return handlerInput.responseBuilder.speak(msg).audioPlay(URL).audioPlayReprompt(URL).audioPlay(URL2).audioPlayReprompt(URL2).audioPlay(URL3).audioPlayReprompt(URL3).audioPlay(URL4).audioPlayReprompt(URL4);//.getResponse();
+    return handlerInput.responseBuilder.speak(msg).audioPlay(URL).audioPlay(URL2).audioPlay(URL3).audioPlay(URL4).audioPlayReprompt(URL4);//.getResponse();
     //return handlerInput.responseBuilder.speak(msg).reprompt(msg).getResponse();
 
   }
