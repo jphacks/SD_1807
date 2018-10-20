@@ -14,6 +14,12 @@ function formatDate(date) {
 }
 
 
+
+
+
+
+
+
 const LaunchRequestHandler = {
   canHandle: function(handlerInput){
     return handlerInput.requestEnvelope.isMatch('LaunchRequest');
@@ -57,23 +63,75 @@ const FinishIntentHandler = {
     // clovaに話す内容を作成。
     //var msg = `${constellation}ですね。${constellation}の今日の運勢は${fortune}です。`;
     if(finish == "おやすみ"){
-      var msg = `${finish}です。`;
-    }else if("音楽"){
+      saydontsleep(handlerInput,finish);
+      dontsleep(handlerInput);
+      var msg ="おはようございます";
+
+      return handlerInput.responseBuilder.speak(msg).reprompt(msg).getResponse();
+    }else if(finish == "音楽"){
       //var msg = `あああ`;
       //const URL = "http://idontwork.asia/bgm/audio.mp3";
       const URL = "http://www.rec-art.jp/music/wav/noise/white-noise-96000hz.wav"
       return handlerInput.responseBuilder.audioPlay(URL).audioPlayReprompt(URL);//.getResponse();
       //return handlerInput.responseBuilder.speak(msg).getResponse();
+    }else if(finish == "おはよう"){
+       hello(finish,handlerInput);
     }else{
       var msg = `わーーーあああ。`;
+      return handlerInput.responseBuilder.speak(msg).reprompt(msg).getResponse();
     }
-    
-    return handlerInput.responseBuilder.speak(msg).getResponse();
-    
   }
 }
 
 
+function startfnc(finish,handlerInput)
+{
+  //関数hyoji()を5秒間隔で呼び出す
+  
+  var count = 0;
+  var countup = function(){
+    count++;
+  }
+  var id = setInterval(function(){
+    countup();
+    hello(finish,handlerInput)
+    if(count == 5){
+      clearInterval(id);
+      msg = "繰り返しはおわりです";
+      return handlerInput.responseBuilder.speak(msg).reprompt(msg).getResponse();
+    }
+  },5000);
+
+}
+
+
+function hello(finish,handlerInput){
+  const msg  = `お早うございます`;
+  return handlerInput.responseBuilder.speak(msg).reprompt(msg).getResponse();
+}
+
+//起きる音楽を流す関数
+function dontsleep(handlerInput){
+  const URL = "http://idontwork.asia/bgm/audio.mp3"
+  return handlerInput.responseBuilder.audioPlay(URL).audioPlayReprompt(URL);
+}
+
+
+//起きる音楽を流す関数
+function saydontsleep(handlerInput,finish){
+  const msg  = `まだ${finish}の時間ではありません．起きてください．`;
+  return handlerInput.responseBuilder.speak(msg).reprompt(msg).getResponse();
+}
+
+
+
+/*
+function dontsleep(handlerInput){
+
+}
+*/
+
+/*
   const DivinationIntentHandler = {
   
     canHandle: function(handlerInput){
@@ -95,7 +153,7 @@ const FinishIntentHandler = {
       
       }
     }
-    
+    */
     
 
   
@@ -110,6 +168,6 @@ const errorHandler = {
 }
 
 exports.handler = clova.extensionBuilders
-  .addRequestHandlers(LaunchRequestHandler,SessionEndedRequestHandler,ClovaGuideIntentHandler,DivinationIntentHandler,FinishIntentHandler)
+  .addRequestHandlers(LaunchRequestHandler,SessionEndedRequestHandler,ClovaGuideIntentHandler,FinishIntentHandler)
   .addErrorHandlers(errorHandler)
   .lambda()

@@ -31,21 +31,21 @@ const ClovaGuideIntentHandler = {
   }
 }
 
-const DivinationIntentHandler = {
+const GoodnightIntentHandler = {
   canHandle: function(handlerInput){
-    return handlerInput.requestEnvelope.isMatch('DivinationIntent');
+    return handlerInput.requestEnvelope.isMatch('GoodnightIntent');
   },
   handle: function(handlerInput){
     // 運勢を配列で。
     var fortunes = ["良い", "普通", "悪い"];
-    // fortunesの中からランダムで
+  // fortunesの中からランダムで
     var fortune = fortunes[Math.floor(Math.random() * fortunes.length)];
 
     // slotsを取得
-    var constellation = handlerInput.requestEnvelope.request.intent.slots.constellation.value;
+    var goodnight = handlerInput.requestEnvelope.request.intent.slots.goodnight.value;
 
     // clovaに話す内容を作成。
-    var msg = `${constellation}なさい。三回ゆっくりと深呼吸をしましょう。次に心を落ち着かせます。心を無にしていきましょう`;
+    var msg = `${goodnight}なさい。三回ゆっくりと深呼吸をしましょう。次に心を落ち着かせます。心を無にしていきましょう`;
     const URL = "http://www.rec-art.jp/music/wav/noise/white-noise-96000hz.wav";
     return handlerInput.responseBuilder.speak(msg).audioPlay(URL).audioPlayReprompt(URL);//.getResponse();
   }
@@ -62,6 +62,6 @@ const errorHandler = {
 }
 
 exports.handler = clova.extensionBuilders
-  .addRequestHandlers(LaunchRequestHandler,SessionEndedRequestHandler,ClovaGuideIntentHandler,DivinationIntentHandler)
+  .addRequestHandlers(LaunchRequestHandler,SessionEndedRequestHandler,ClovaGuideIntentHandler,GoodnightIntentHandler)
   .addErrorHandlers(errorHandler)
   .lambda()
