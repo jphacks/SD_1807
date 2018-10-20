@@ -59,8 +59,8 @@ const FinishIntentHandler = {
     if(finish == "おやすみ"){
       var msg = `${finish}です。`;
     }else if("音楽"){
-      var msg = `あああ`;
-      const URL = https://www.dropbox.com/s/y833208vlk01v1l/mozart.mp3;
+      //var msg = `あああ`;
+      const URL = "http://idontwork.asia/bgm/audio.mp3";
       return handlerInput.responseBuilder.audioPlay(URL).audioPlayReprompt(URL);//.getResponse();
       //return handlerInput.responseBuilder.speak(msg).getResponse();
     }else{
