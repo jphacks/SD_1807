@@ -25,7 +25,7 @@ const LaunchRequestHandler = {
     return handlerInput.requestEnvelope.isMatch('LaunchRequest');
   },
   handle: function(handlerInput){
-    var msg = "今は"+formatDate(today);
+    var msg = "お疲れ様です，";//今は"+formatDate(today);
     return handlerInput.responseBuilder.speak(msg).reprompt(msg).getResponse();
   }
 }
@@ -64,6 +64,7 @@ const FinishIntentHandler = {
     //var msg = `${constellation}ですね。${constellation}の今日の運勢は${fortune}です。`;
     if(finish == "おやすみ"){
       saydontsleep(handlerInput,finish);
+      //setTimeout(function(){music('hoge')},5000);
       dontsleep(handlerInput);
       var msg ="おはようございます";
 
@@ -75,7 +76,10 @@ const FinishIntentHandler = {
       return handlerInput.responseBuilder.audioPlay(URL).audioPlayReprompt(URL);//.getResponse();
       //return handlerInput.responseBuilder.speak(msg).getResponse();
     }else if(finish == "おはよう"){
-       hello(finish,handlerInput);
+      //sayhello(handlerInput)
+       startfnc(handlerInput);
+       var msg = "ばあい";
+      return handlerInput.responseBuilder.speak(msg).reprompt(msg).getResponse();
     }else{
       var msg = `わーーーあああ。`;
       return handlerInput.responseBuilder.speak(msg).reprompt(msg).getResponse();
@@ -84,28 +88,31 @@ const FinishIntentHandler = {
 }
 
 
-function startfnc(finish,handlerInput)
+function startfnc(handlerInput)
 {
-  //関数hyoji()を5秒間隔で呼び出す
-  
   var count = 0;
-  var countup = function(){
-    count++;
+  while(count<=5){
+    if(count == 5){
+      break;
+    }
+    setTimeout('sayhello(handlerInput)',5000);
+    count+=1;
   }
+  var msg = "繰り返しはおわりです";
+  return handlerInput.responseBuilder.speak(msg).reprompt(msg).getResponse();
+}
+/*
+    //関数hello()を5秒間隔で呼び出す
   var id = setInterval(function(){
     countup();
-    hello(finish,handlerInput)
-    if(count == 5){
-      clearInterval(id);
-      msg = "繰り返しはおわりです";
-      return handlerInput.responseBuilder.speak(msg).reprompt(msg).getResponse();
-    }
-  },5000);
-
-}
+    sayhello(handlerInput);
+    
+  },1000);*/
 
 
-function hello(finish,handlerInput){
+
+
+function sayhello(handlerInput){
   const msg  = `お早うございます`;
   return handlerInput.responseBuilder.speak(msg).reprompt(msg).getResponse();
 }
@@ -119,42 +126,11 @@ function dontsleep(handlerInput){
 
 //起きる音楽を流す関数
 function saydontsleep(handlerInput,finish){
-  const msg  = `まだ${finish}の時間ではありません．起きてください．`;
-  return handlerInput.responseBuilder.speak(msg).reprompt(msg).getResponse();
-}
-
-
-
-/*
-function dontsleep(handlerInput){
-
-}
-*/
-
-/*
-  const DivinationIntentHandler = {
+  const msg  = `まだ${finish}の時間ではありません．起きてください．5秒後に音楽が流れます`;
   
-    canHandle: function(handlerInput){
-      return handlerInput.requestEnvelope.isMatch('DivinationIntent');
-    },
-    handle: function(handlerInput){
-      // 運勢を配列で。
-      var fortunes = ["良い", "普通", "悪い"];
-      // fortunesの中からランダムで
-      var fortune = fortunes[Math.floor(Math.random() * fortunes.length)];
+  return handlerInput.responseBuilder.speak(msg).reprompt(msg);
+}
 
-      // slotsを取得
-      //var finish = handlerInput.requestEnvelope.request.intent.slots.finish.value;
-      var constellation = handlerInput.requestEnvelope.request.intent.slots.constellation.value;
-      
-      // clovaに話す内容を作成。
-      var msg = `${constellation}ですね。${constellation}の今日の運勢は${fortune}です。`;
-      return handlerInput.responseBuilder.speak(msg).getResponse();
-      
-      }
-    }
-    */
-    
 
   
 const errorHandler = {
