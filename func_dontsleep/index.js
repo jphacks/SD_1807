@@ -39,7 +39,7 @@ const ClovaGuideIntentHandler = {
     return handlerInput.requestEnvelope.isMatch('Clova.GuideIntent');
   },
   handle: function(handlerInput){
-    var msg = `かきくけこ`;
+    var msg ="わかんないや";
     return handlerInput.responseBuilder.speak(msg).reprompt(msg).getResponse();
   }
 }
@@ -60,7 +60,8 @@ const FinishIntentHandler = {
       var msg = `${finish}です。`;
     }else if("音楽"){
       //var msg = `あああ`;
-      const URL = "http://idontwork.asia/bgm/audio.mp3";
+      //const URL = "http://idontwork.asia/bgm/audio.mp3";
+      const URL = "http://www.rec-art.jp/music/wav/noise/white-noise-96000hz.wav"
       return handlerInput.responseBuilder.audioPlay(URL).audioPlayReprompt(URL);//.getResponse();
       //return handlerInput.responseBuilder.speak(msg).getResponse();
     }else{
