@@ -3,10 +3,10 @@
 
 
 
-[![Product Name](image.png)](https://www.youtube.com/watch?v=G5rULR53uMk)
+[![Product Name](image.png)](https://www.youtube.com/watch?v=5jdghwMJo74&feature=youtu.be)
 
 ## 製品概要
-### Sleeping×Clova×Tech
+### Sleeping×Clova×Technology
 
 
 ### 背景
@@ -56,8 +56,11 @@ clova: おやすみなさい。心を落ち着かせましょう。あなたは�
 
 
 ### 解決出来ること
-* 早く眠りにつけるようになり，快適な睡眠が楽しめ，人生の幸福度が上がる
-* 起きているサポートをしてくれる
+*素早く眠りにつけるようになり、質の良い睡眠をとる事ができる。
+　→授業やJPHACKSに遅刻する事がなくなる
+
+*起きてるサポートをしてくれる
+　→締め切り間近のレポート課題やJPHACKSの開発が進む
 
 
 ### 今後の展望
@@ -67,27 +70,31 @@ clova: おやすみなさい。心を落ち着かせましょう。あなたは�
 
 
 ## 開発内容・開発技術
-- Java ScriptでClovaのExtention を書いた。
+- Java ScriptでAWS Lamda上に関数を作成，Line Clova Developer Center β上のClova Extensions Kitを用いてExtensionを作成した．
 
 
 ### 活用した技術
-- LINE Clova
-- AWS Lambda,AWS API Gateway
-- Line Clova Developer Center β
-- Clova Developer Center
+- LINE Clova Developer Center β
+- Clova Extensions Kit
+- AWS Lambda
+- AWS API Gateway
 - node.js 8.10
 - npm
 
 #### API・データ
+* フリー歌もの音楽素材「シャイニングスター」
+https://maoudamashii.jokersounds.com/archives/song_shiho_shining_star.html
+* フリーWave,MP3
+http://www.ne.jp/asahi/music/myuu/wave/wave.htm
 
 
 #### フレームワーク・ライブラリ・モジュール
 * love-clova
 https://github.com/imajoriri/love-clova
-* 
+ 
 
 #### デバイス
-* Clova mini
+* Clova Friends
 
 ### 研究内容・事前開発プロダクト（任意）
 
@@ -101,29 +108,22 @@ https://github.com/imajoriri/love-clova
 * 思考：何も考えない努力をすると良い．
 * 運動：力入れる⇒解放をすると，しっかりリラックスをすることができる（いきなりリラックスしようとしても，力を抜くのは難しい
 
-*　睡眠満足度テスト
-1. 思い通りに寝たり起きたりできますか（1：全くできない～5：完璧にできる）
-2. 日中に眠くなりますか（1：まったくない～5：いつも）
-3. 夜中に目が覚めますか（1：まったくない～5：いつも）
-4. 夜中に目が覚めた時，寝直すのに苦労しますか（1：まったくない～5：いつも）
-5. いい夢を見ますか（1：まったくない～5：いつも）
-6. あなたの睡眠の質は（1：悪い～5：良い）
-7. 朝目覚めた時の気分は（1：悪い～5：良い）
-
-合計点
-- 17以下　睡眠状態悪め．しっかり寝ましょう
-- 18～26　普通
-- 27以上　普通の人に比べて幸福度が25％高く，物事の達成率が30％高く，ストレスを感じる確率が40％低い
-
 
 脊椎動物にとって睡眠は普遍的な生理現象であり、ITをはじめとするテクノロジーが発達した現代の人類にとっても睡眠は逃れられないものです。しかし、現代社会においてIT化や工業化などにより情報の流れや生活リズムが加速しているため、睡眠時間の不足や睡眠サイクルの不規則化など睡眠に関する問題は大きな問題になっています。2004年のLockley氏らの論文\[1\]では、研修医たちの労働時間を短縮したことで彼らの睡眠時間が増加したという報告がなされていますが、その結果として夜勤時の不注意によるミスが半減したとも報告されています。この事実は医師の睡眠不足が医療ミスを増加させるということを意味しており、睡眠に関わる問題が社会の中で患者の命という重大な問題につながるということを示唆しています。
 - \[1\] Lockley, S. W., Landrigan, C. P., & Stone, P. H. (2004). Effect of Reducing Interns’ Weekly Work Hours on Sleep and Attentional Failures. The New England Journal of Medicine, 9.  
 
 
 <p>参考文献</P>
-http://nitizyou0713.seesaa.net/article/439261067.html http://ch.nicovideo.jp/mentalist/blomaga/ar993334
-http://med.stanford.edu/sleepdivision.html https://ahsj.net/hospital-public-promotion/%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%95%E3%82%A9%E3%83%BC%E3%83%89%E5%A4%A7%E5%AD%A6%E3%81%AE%E5%BA%83%E5%A0%B1%E6%88%A6%E8%A1%93-%E7%9D%A1%E7%9C%A0%E7%A7%91%E5%AD%A6/
-
+スタンフォード大学睡眠生体リズム研究所
+http://med.stanford.edu/sleepdivision.html
+メンタリストDaiGoを救った睡眠管理の極意
+http://nitizyou0713.seesaa.net/article/439261067.html
+睡眠の質を高める心理学～ベッドにインして５秒でスヤァ
+http://ch.nicovideo.jp/mentalist/blomaga/ar993334
+スタンフォード大学の広報戦術-睡眠科学の本
+https://ahsj.net/hospital-public-promotion/%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%95%E3%82%A9%E3%83%BC%E3%83%89%E5%A4%A7%E5%AD%A6%E3%81%AE%E5%BA%83%E5%A0%B1%E6%88%A6%E8%A1%93-%E7%9D%A1%E7%9C%A0%E7%A7%91%E5%AD%A6/
+よく眠るための科学が教える10の秘密
+https://www.amazon.co.jp/exec/obidos/ASIN/4163903550/psy0c6-22/ref=nosim/
 
 
 ### 独自開発技術（Hack Dayで開発したもの）
@@ -133,6 +133,7 @@ http://med.stanford.edu/sleepdivision.html https://ahsj.net/hospital-public-prom
 * Line Clova Developer Center βによる対話モデルの作成とスキルの開発
 * AWS Lambda,AWS API GatewayによるAPIの開発とExtensionサーバーの設定
 * 本来LINE Clovaでは、Extend側でタイマー機能を実装しようとして長時間、Clova側にresponseをしないと、セッションがタイムアウトになってしまう。この問題を解決するために無音の音源をClovaから再生することで、セッションのタイムアウト問題を解決した。
+
 
 
 
