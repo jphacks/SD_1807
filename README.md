@@ -3,7 +3,7 @@
 
 
 
-[![Product Name](image.png)](https://www.youtube.com/watch?v=G5rULR53uMk)
+[![Product Name](image.png)](https://www.youtube.com/watch?v=5jdghwMJo74&feature=youtu.be)
 
 ## 製品概要
 ### Sleeping×Clova×Tech
@@ -79,6 +79,10 @@ clova: おやすみなさい。心を落ち着かせましょう。あなたは�
 - npm
 
 #### API・データ
+* フリー歌もの音楽素材「シャイニングスター」
+https://maoudamashii.jokersounds.com/archives/song_shiho_shining_star.html
+* フリーWave,MP3
+http://www.ne.jp/asahi/music/myuu/wave/wave.htm
 
 
 #### フレームワーク・ライブラリ・モジュール
