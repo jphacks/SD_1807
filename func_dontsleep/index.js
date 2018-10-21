@@ -114,7 +114,7 @@ const DemoIntentHandler = {
     var wake = handlerInput.requestEnvelope.request.intent.slots.demo.value;
     // clovaに話す内容を作成。
     if(wake == "デモ"){
-      var msg = `皆さんお疲れ様です，もうすぐ私達の発表は終わりですがあと2組の発表が残っています．
+      var msg = `会場の皆さんお疲れ様です，もうすぐ私達の発表は終わりですがあと2組の発表が残っています．
       最後まで寝ないでききましょうね．ありがとうございました．`;
     }else{
       var msg = "";
@@ -187,10 +187,10 @@ function dontsleep(handlerInput){
   //const URL = "http://idontwork.asia/bgm/audio.mp3"
   //const URL = "http://www.ne.jp/asahi/music/myuu/wave/loop1.wav";
 
-  var URLs = ["http://www.ne.jp/asahi/music/myuu/wave/jupiter.mp3","http://www.ne.jp/asahi/music/myuu/wave/loop1.wav","http://www.ne.jp/asahi/music/myuu/wave/loop3.wav", 
-  "http://www.ne.jp/asahi/music/myuu/wave/fanfare.mp3","http://www.ne.jp/asahi/music/myuu/wave/montagu.mp3"];
+  var URLs = ["http://www.ne.jp/asahi/music/myuu/wave/loop1.wav","http://www.ne.jp/asahi/music/myuu/wave/jupiter.mp3","http://www.ne.jp/asahi/music/myuu/wave/loop3.wav","http://www.ne.jp/asahi/music/myuu/wave/fanfare.mp3","http://www.ne.jp/asahi/music/myuu/wave/montagu.mp3"];
   // fortunesの中からランダムで
-  var URL = URLs[Math.floor(Math.random() * URLs.length)];
+  var URL = 0;
+  URL = URLs[Math.floor(Math.random() * URLs.length)];
 
   return handlerInput.responseBuilder.audioPlay(URL).audioPlayReprompt(URL);//.getResponse();
 }
