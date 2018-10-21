@@ -57,11 +57,10 @@ clova: おやすみなさい。心を落ち着かせましょう。あなたは�
 
 ### 解決出来ること
 *素早く眠りにつけるようになり、質の良い睡眠をとる事ができる。
-→授業やJPHACKSに遅刻する事がなくなる
+　→授業やJPHACKSに遅刻する事がなくなる
 
 *起きてるサポートをしてくれる
-　　
-　　→締め切り間近のレポート課題やJPHACKSの開発が進む
+　→締め切り間近のレポート課題やJPHACKSの開発が進む
 
 
 ### 今後の展望
@@ -75,11 +74,10 @@ clova: おやすみなさい。心を落ち着かせましょう。あなたは�
 
 
 ### 活用した技術
-- LINE Clova
-- AWS Lambda
-- AWS API Gateway
 - LINE Clova Developer Center β
 - Clova Extensions Kit
+- AWS Lambda
+- AWS API Gateway
 - node.js 8.10
 - npm
 
@@ -93,7 +91,7 @@ http://www.ne.jp/asahi/music/myuu/wave/wave.htm
 #### フレームワーク・ライブラリ・モジュール
 * love-clova
 https://github.com/imajoriri/love-clova
-* 
+ 
 
 #### デバイス
 * Clova Friends
