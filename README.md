@@ -67,13 +67,14 @@ clova: おやすみなさい。心を落ち着かせましょう。あなたは�
 
 
 ## 開発内容・開発技術
-- Java ScriptでAWS Lamda上に関数を作成，Line Clova Developer Center β上のClova Extensions Kitを用いてスキルを作成した．
+- Java ScriptでAWS Lamda上に関数を作成，Line Clova Developer Center β上のClova Extensions Kitを用いてExtensionを作成した．
 
 
 ### 活用した技術
 - LINE Clova
-- AWS Lambda,AWS API Gateway
-- Line Clova Developer Center β
+- AWS Lambda
+- AWS API Gateway
+- LINE Clova Developer Center β
 - Clova Extensions Kit
 - node.js 8.10
 - npm
@@ -137,6 +138,7 @@ http://med.stanford.edu/sleepdivision.html https://ahsj.net/hospital-public-prom
 * Line Clova Developer Center βによる対話モデルの作成とスキルの開発
 * AWS Lambda,AWS API GatewayによるAPIの開発とExtensionサーバーの設定
 * 本来LINE Clovaでは、Extend側でタイマー機能を実装しようとして長時間、Clova側にresponseをしないと、セッションがタイムアウトになってしまう。この問題を解決するために無音の音源をClovaから再生することで、セッションのタイムアウト問題を解決した。
+
 
 
 
