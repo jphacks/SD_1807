@@ -10,7 +10,7 @@ function formatDate(date) {
   const hours = date.getHours();
   const minutes = date.getMinutes();
 
-  return `${m}月${d}日 ${day}曜日，${hours}時${minutes}分です`;
+  return `${m}月${d}日 ${day}曜日，${hours}時${minutes}分です．気合を入れていきましょう．`;
 }
 
 
@@ -20,7 +20,7 @@ const LaunchRequestHandler = {
     return handlerInput.requestEnvelope.isMatch('LaunchRequest');
   },
   handle: function(handlerInput){
-    var msg = "お疲れ様です，";//今は"+formatDate(today);
+    var msg = "お疲れ様です，今は"+formatDate(today);
     return handlerInput.responseBuilder.speak(msg).reprompt(msg).getResponse();
   }
 }
