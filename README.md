@@ -67,14 +67,14 @@ clova: おやすみなさい。心を落ち着かせましょう。あなたは�
 
 
 ## 開発内容・開発技術
-- Java ScriptでClovaのExtention を書いた。
+- Java ScriptでAWS Lamda上に関数を作成，ClovaのExtention を書いた。
 
 
 ### 活用した技術
 - LINE Clova
 - AWS Lambda,AWS API Gateway
 - Line Clova Developer Center β
-- Clova Developer Center
+- Clova Extensions Kit
 - node.js 8.10
 - npm
 
@@ -91,7 +91,7 @@ https://github.com/imajoriri/love-clova
 * 
 
 #### デバイス
-* Clova mini
+* Clova Friends
 
 ### 研究内容・事前開発プロダクト（任意）
 
