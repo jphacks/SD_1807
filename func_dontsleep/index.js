@@ -59,19 +59,10 @@ const FinishIntentHandler = {
     //var msg = `${constellation}ですね。${constellation}の今日の運勢は${fortune}です。`;
     if(finish == "おやすみ"){
       saydontsleep(handlerInput,finish);
-      //setTimeout(function(){music('hoge')},5000);
-      /*sleep(5, function () {
-   
-        console.log('5秒経過しました！');
-     
-    }); 
-    */ 
       dontsleep(handlerInput);
- 
-      //dontsleep(handlerInput);
       var msg ="おはようございます！．目は覚めましたか？もし眠気が覚めていなければもう一度眠たいといってください．がんばってくださいね．";
-
       return handlerInput.responseBuilder.speak(msg).reprompt(msg).getResponse();
+
     }else if(finish == "音楽"){
       //var msg = `あああ`;
       //const URL = "http://idontwork.asia/bgm/audio.mp3";
@@ -104,8 +95,10 @@ const WakeIntentHandler = {
     const URL3 = "http://www.ne.jp/asahi/music/myuu/wave/eine.mp3";
     const URL4 = "http://www.ne.jp/asahi/music/myuu/wave/menuettm.mp3";
    
-    //return handlerInput.responseBuilder.speak(msg).audioPlay(URL).audioPlayReprompt(URL).audioPlay(URL2).audioPlayReprompt(URL2).audioPlay(URL3).audioPlayReprompt(URL3).audioPlay(URL4).audioPlayReprompt(URL4);//.getResponse();
-    return handlerInput.responseBuilder.speak(msg).audioPlay(URL).audioPlay(URL2).audioPlay(URL3).audioPlay(URL4).audioPlayReprompt(URL4);//.getResponse();
+    //return handlerInput.responseBuilder.speak(msg).audioPlay(URL).audioPlayReprompt(URL)
+    //.audioPlay(URL2).audioPlayReprompt(URL2).audioPlay(URL3).audioPlayReprompt(URL3).audioPlay(URL4).audioPlayReprompt(URL4);//.getResponse();
+    return handlerInput.responseBuilder.speak(msg).audioPlay(URL).audioPlay(URL2).audioPlay(URL3)
+    .audioPlay(URL4).audioPlayReprompt(URL4);//.getResponse();
     //return handlerInput.responseBuilder.speak(msg).reprompt(msg).getResponse();
 
   }
@@ -120,7 +113,13 @@ const DemoIntentHandler = {
     // slotsを取得
     var wake = handlerInput.requestEnvelope.request.intent.slots.demo.value;
     // clovaに話す内容を作成。
-    var msg = `皆さんお疲れ様です，もうすぐ私達の発表は終わりですがあと2組の発表が残っています．最後まで寝ないでききましょうね．ありがとうございました．`;
+    if(wake == "デモ"){
+      var msg = `皆さんお疲れ様です，もうすぐ私達の発表は終わりですがあと2組の発表が残っています．
+      最後まで寝ないでききましょうね．ありがとうございました．`;
+    }else{
+      var msg = "";
+    }
+    
 
     return handlerInput.responseBuilder.speak(msg);
 
@@ -186,7 +185,13 @@ function sayhello(handlerInput){
 //起きる音楽を流す関数
 function dontsleep(handlerInput){
   //const URL = "http://idontwork.asia/bgm/audio.mp3"
-  const URL = "http://www.ne.jp/asahi/music/myuu/wave/loop1.wav";
+  //const URL = "http://www.ne.jp/asahi/music/myuu/wave/loop1.wav";
+
+  var URLs = ["http://www.ne.jp/asahi/music/myuu/wave/jupiter.mp3","http://www.ne.jp/asahi/music/myuu/wave/loop1.wav","http://www.ne.jp/asahi/music/myuu/wave/loop3.wav", 
+  "http://www.ne.jp/asahi/music/myuu/wave/fanfare.mp3","http://www.ne.jp/asahi/music/myuu/wave/montagu.mp3"];
+  // fortunesの中からランダムで
+  var URL = URLs[Math.floor(Math.random() * URLs.length)];
+
   return handlerInput.responseBuilder.audioPlay(URL).audioPlayReprompt(URL);//.getResponse();
 }
 
@@ -209,6 +214,7 @@ const errorHandler = {
 }
 
 exports.handler = clova.extensionBuilders
-  .addRequestHandlers(LaunchRequestHandler,SessionEndedRequestHandler,ClovaGuideIntentHandler,FinishIntentHandler,DemoIntentHandler,WakeIntentHandler)
+  .addRequestHandlers(LaunchRequestHandler,SessionEndedRequestHandler,ClovaGuideIntentHandler,
+    FinishIntentHandler,DemoIntentHandler,WakeIntentHandler)
   .addErrorHandlers(errorHandler)
   .lambda()
