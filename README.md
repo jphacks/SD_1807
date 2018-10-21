@@ -3,7 +3,7 @@
 
 
 
-[![Product Name](image.png)](https://www.youtube.com/watch?v=5jdghwMJo74&feature=youtu.be)
+[![Product Name](image.png)](https://www.youtube.com/watch?v=4r_DsnN4JOU)
 
 ## 製品概要
 ### Sleeping×Clova×Technology
@@ -68,6 +68,7 @@ clova: おやすみなさい。心を落ち着かせましょう。あなたは�
 
 ## 開発内容・開発技術
 - Java ScriptでAWS Lamda上に関数を作成，Line Clova Developer Center β上のClova Extensions Kitを用いてExtensionを作成した．
+
 
 
 ### 活用した技術
