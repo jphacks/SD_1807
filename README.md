@@ -137,8 +137,9 @@ http://med.stanford.edu/sleepdivision.html https://ahsj.net/hospital-public-prom
 
 * 快眠にいたるための方法論についての文献調査
 * Line Clova Developer Center βによる対話モデルの作成とスキルの開発
-* AWS Lambda,AWS API GatewayによるAPIの開発とExtensionサーバーの設定
+* AWS Lambda、AWS API GatewayによるAPIの開発とExtensionサーバーの設定
 * 本来LINE Clovaでは、Extend側でタイマー機能を実装しようとして長時間、Clova側にresponseをしないと、セッションがタイムアウトになってしまう。この問題を解決するために無音の音源をClovaから再生することで、セッションのタイムアウト問題を解決した。
+*標準語だけでなく、関西弁やJK用語にも対応。幅広い世代に使っていただけるように工夫した。
 
 
 
