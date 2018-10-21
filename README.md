@@ -23,7 +23,7 @@
 - [1] Lockley, S. W., Landrigan, C. P., & Stone, P. H. (2004). Effect of Reducing Interns’ Weekly Work Hours on Sleep and Attentional Failures. The New England Journal of Medicine, 9.  
 
 
-### 製品説明（具体的な製品の説明）
+### 製品説明
 
 ### 特長
 - 快眠を支援するアプリと居眠りを防止するスキルの２つのセット。
@@ -96,7 +96,7 @@ https://github.com/imajoriri/love-clova
 #### デバイス
 * Clova Friends
 
-### 研究内容・事前開発プロダクト（任意）
+### 研究内容・事前開発プロダクト
 
 以下の事を調査した．
 
@@ -121,12 +121,13 @@ http://nitizyou0713.seesaa.net/article/439261067.html
 睡眠の質を高める心理学～ベッドにインして５秒でスヤァ
 http://ch.nicovideo.jp/mentalist/blomaga/ar993334
 スタンフォード大学の広報戦術-睡眠科学の本
+<br>
 https://ahsj.net/hospital-public-promotion/%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%95%E3%82%A9%E3%83%BC%E3%83%89%E5%A4%A7%E5%AD%A6%E3%81%AE%E5%BA%83%E5%A0%B1%E6%88%A6%E8%A1%93-%E7%9D%A1%E7%9C%A0%E7%A7%91%E5%AD%A6/
 よく眠るための科学が教える10の秘密
 https://www.amazon.co.jp/exec/obidos/ASIN/4163903550/psy0c6-22/ref=nosim/
 
 
-### 独自開発技術（Hack Dayで開発したもの）
+### 独自開発技術
 #### 2日間に開発した独自の機能・技術
 
 * 快眠にいたるための方法論についての文献調査
