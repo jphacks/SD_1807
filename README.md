@@ -37,11 +37,11 @@
 2. 何も考えないように促す．思考を停止させることで，脳の働きを休め，睡眠に近づくことができる．「何も考えない」と脳内で唱えることが何も考えないコツとなる．
 3. ホワイトノイズが睡眠を促進するという報告がされている．
       
-user: ねぇClova、眠りたいんだけど。<br>
+user: ねぇClova、セロトニンを起動して。<br>
 clova: 快眠サポートを始めます。　<br>
       まずは肉体のリラックスから始めましょう。<br>
-user: 　もう寝るね<br>
-clova: おやすみなさい。心を落ち着かせましょう。あなたは何も考えていません...（音楽を流し始める）<br>
+user:　おやすみ<br>
+clova: おやすみなさい。心を落ち着かせましょう。あなたは何も考えていません...（ホワイトノイズを流し始める）<br>
 
 
 #### 2. 居眠り防止支援  
@@ -53,6 +53,18 @@ clova: おやすみなさい。心を落ち着かせましょう。あなたは�
 4. Clovaが返答
 5. Clovaの進捗確認に対して、ユーザーの反応がなければClovaがなにか起こすアクション
 6. ときどき励ます。
+
+user: ねぇClova、カフェインを起動して。<br>
+clova: お疲れ様です．　<br>
+user:　作業をはじめるよ<br>
+clova: 作業を開始，がんばってくださいね．(作業が捗る音楽を流し始める)<br>
+・<br>
+・<br>
+・<br>
+user: ねむたい
+clova: まだ寝る時間ではありません！(目が覚める音楽を流し始める)
+
+
 
 
 ### 解決出来ること
@@ -115,11 +127,17 @@ https://github.com/imajoriri/love-clova
 
 <p>参考文献</P>
 スタンフォード大学睡眠生体リズム研究所
+<br>
 http://med.stanford.edu/sleepdivision.html
+<br>
 メンタリストDaiGoを救った睡眠管理の極意
+<br>
 http://nitizyou0713.seesaa.net/article/439261067.html
+<br>
 睡眠の質を高める心理学～ベッドにインして５秒でスヤァ
-http://ch.nicovideo.jp/mentalist/blomaga/ar993334
+<br>
+http://ch.nicovideo.jp/mentalist/blomaga/ar993334c
+<br>
 スタンフォード大学の広報戦術-睡眠科学の本
 <br>
 https://ahsj.net/hospital-public-promotion/%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%95%E3%82%A9%E3%83%BC%E3%83%89%E5%A4%A7%E5%AD%A6%E3%81%AE%E5%BA%83%E5%A0%B1%E6%88%A6%E8%A1%93-%E7%9D%A1%E7%9C%A0%E7%A7%91%E5%AD%A6/
