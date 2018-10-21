@@ -3,7 +3,7 @@
 
 
 
-[![Product Name](image2.png)](https://youtu.be/wzlgo9xku5w)
+[![Product Name](image2.png)](https://www.youtube.com/watch?v=bmMFRU4lzY4)
 
 ## 製品概要
 ### 睡眠×Clova×Technology
