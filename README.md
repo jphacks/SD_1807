@@ -6,7 +6,7 @@
 [![Product Name](image2.png)](https://youtu.be/wzlgo9xku5w)
 
 ## 製品概要
-### Sleep×Clova×Technology
+### 睡眠×Clova×Technology
 
 
 ### 背景
