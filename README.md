@@ -67,7 +67,7 @@ clova: おやすみなさい。心を落ち着かせましょう。あなたは�
 
 
 ## 開発内容・開発技術
-- Java ScriptでAWS Lamda上に関数を作成，ClovaのExtention を書いた。
+- Java ScriptでAWS Lamda上に関数を作成，Line Clova Developer Center β上のClova Extensions Kitを用いてスキルを作成した．
 
 
 ### 活用した技術
