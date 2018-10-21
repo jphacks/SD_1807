@@ -3,7 +3,7 @@
 
 
 
-[![Product Name](image.png)](https://www.youtube.com/watch?v=4r_DsnN4JOU)
+[![Product Name](image.png)](https://www.youtube.com/watch?v=5jdghwMJo74&feature=youtu.be)
 
 ## 製品概要
 ### Sleeping×Clova×Technology
@@ -70,7 +70,6 @@ clova: おやすみなさい。心を落ち着かせましょう。あなたは�
 - Java ScriptでAWS Lamda上に関数を作成，Line Clova Developer Center β上のClova Extensions Kitを用いてExtensionを作成した．
 
 
-
 ### 活用した技術
 - LINE Clova
 - AWS Lambda
@@ -127,9 +126,16 @@ https://github.com/imajoriri/love-clova
 
 
 <p>参考文献</P>
-http://nitizyou0713.seesaa.net/article/439261067.html http://ch.nicovideo.jp/mentalist/blomaga/ar993334
-http://med.stanford.edu/sleepdivision.html https://ahsj.net/hospital-public-promotion/%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%95%E3%82%A9%E3%83%BC%E3%83%89%E5%A4%A7%E5%AD%A6%E3%81%AE%E5%BA%83%E5%A0%B1%E6%88%A6%E8%A1%93-%E7%9D%A1%E7%9C%A0%E7%A7%91%E5%AD%A6/
-
+スタンフォード大学睡眠生体リズム研究所
+http://med.stanford.edu/sleepdivision.html
+メンタリストDaiGoを救った睡眠管理の極意
+http://nitizyou0713.seesaa.net/article/439261067.html
+睡眠の質を高める心理学～ベッドにインして５秒でスヤァ
+http://ch.nicovideo.jp/mentalist/blomaga/ar993334
+スタンフォード大学の広報戦術-睡眠科学の本
+https://ahsj.net/hospital-public-promotion/%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%95%E3%82%A9%E3%83%BC%E3%83%89%E5%A4%A7%E5%AD%A6%E3%81%AE%E5%BA%83%E5%A0%B1%E6%88%A6%E8%A1%93-%E7%9D%A1%E7%9C%A0%E7%A7%91%E5%AD%A6/
+よく眠るための科学が教える10の秘密
+https://www.amazon.co.jp/exec/obidos/ASIN/4163903550/psy0c6-22/ref=nosim/
 
 
 ### 独自開発技術（Hack Dayで開発したもの）
@@ -137,9 +143,8 @@ http://med.stanford.edu/sleepdivision.html https://ahsj.net/hospital-public-prom
 
 * 快眠にいたるための方法論についての文献調査
 * Line Clova Developer Center βによる対話モデルの作成とスキルの開発
-* AWS Lambda、AWS API GatewayによるAPIの開発とExtensionサーバーの設定
+* AWS Lambda,AWS API GatewayによるAPIの開発とExtensionサーバーの設定
 * 本来LINE Clovaでは、Extend側でタイマー機能を実装しようとして長時間、Clova側にresponseをしないと、セッションがタイムアウトになってしまう。この問題を解決するために無音の音源をClovaから再生することで、セッションのタイムアウト問題を解決した。
-*標準語だけでなく、関西弁やJK用語にも対応。幅広い世代に使っていただけるように工夫した。
 
 
 
