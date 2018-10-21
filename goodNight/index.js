@@ -1,3 +1,7 @@
+//
+//  Created by Yuya Ishikawa on 2018/10/20.
+//  Copyright © 2018年 Yuya Ishikawa & Yushi Nakaya. All rights reserved.
+//
 var clova = require("love-clova");
 
 const LaunchRequestHandler = {
@@ -9,7 +13,6 @@ const LaunchRequestHandler = {
     return handlerInput.responseBuilder.speak(msg).reprompt(msg).getResponse();
   }
 }
-
 
 const SessionEndedRequestHandler = {
   canHandle: function(handlerInput){
@@ -36,14 +39,8 @@ const GoodnightIntentHandler = {
     return handlerInput.requestEnvelope.isMatch('GoodnightIntent');
   },
   handle: function(handlerInput){
-    // 運勢を配列で。
-    var fortunes = ["良い", "普通", "悪い"];
-  // fortunesの中からランダムで
-    var fortune = fortunes[Math.floor(Math.random() * fortunes.length)];
-
     // slotsを取得
     var goodnight = handlerInput.requestEnvelope.request.intent.slots.goodnight.value;
-
     // clovaに話す内容を作成。
     var msg = `そろそろ寝ましょうか．${goodnight}なさい。私もそろそろ寝ますね．三回ゆっくりと深呼吸をしましょう。次に心を落ち着かせます。心を無にしていきましょう`;
     const URL = "http://www.rec-art.jp/music/wav/noise/white-noise-96000hz.wav";

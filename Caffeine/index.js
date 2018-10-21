@@ -1,19 +1,10 @@
+//
+//  Created by Yushi Nakaya on 2018/10/20.
+//  Copyright © 2018年 Yushi Nakaya. All rights reserved.
+//
+
 var clova = require("love-clova");
 var today = new Date();
-//var today = todayworld.toLocaleDateString('ja-JP-u-ca-japanese');
-
-function formatDate(date) {
-  const y = date.getFullYear();
-  const m = date.getMonth() + 1;
-  const d = date.getDate();
-  const day = '日月火水木金土'.charAt(date.getDay());
-  const hours = date.getHours();
-  const minutes = date.getMinutes();
-
-  return `${m}月${d}日 ${day}曜日，${hours}時${minutes}分です．気合を入れていきましょう．`;
-}
-
-
 
 const LaunchRequestHandler = {
   canHandle: function(handlerInput){
@@ -51,33 +42,21 @@ const FinishIntentHandler = {
     return handlerInput.requestEnvelope.isMatch('FinishIntent');
   },
   handle: function(handlerInput){
-    
     // slotsを取得
     var finish = handlerInput.requestEnvelope.request.intent.slots.finish.value;
-    
+
     // clovaに話す内容を作成。
-    //var msg = `${constellation}ですね。${constellation}の今日の運勢は${fortune}です。`;
     if(finish == "おやすみ"){
       saydontsleep(handlerInput,finish);
       dontsleep(handlerInput);
-      var msg ="おはようございます！．目は覚めましたか？もし眠気が覚めていなければもう一度眠たいといってください．がんばってくださいね．";
+      var msg = "おはようございます！．目は覚めましたか？もし眠気が覚めていなければもう一度眠たいといってください．がんばってくださいね．";
       return handlerInput.responseBuilder.speak(msg).reprompt(msg).getResponse();
-
     }else if(finish == "音楽"){
-      //var msg = `あああ`;
-      //const URL = "http://idontwork.asia/bgm/audio.mp3";
       const URL = "https://maoudamashii.jokersounds.com/music/song/mp3/song_shiho_shining_star.mp3";
-      //http://www.rec-art.jp/music/wav/noise/white-noise-96000hz.wav"
-      return handlerInput.responseBuilder.audioPlay(URL).audioPlayReprompt(URL);//.getResponse();
-      //return handlerInput.responseBuilder.speak(msg).getResponse();
+      return handlerInput.responseBuilder.audioPlay(URL).audioPlayReprompt(URL);
     }
-    /*else{
-      var msg = `わーーーあああ。`;
-      return handlerInput.responseBuilder.speak(msg).reprompt(msg).getResponse();
-    }*/
   }
 }
-
 
 const WakeIntentHandler = {
   canHandle: function(handlerInput){
@@ -88,22 +67,14 @@ const WakeIntentHandler = {
     var wake = handlerInput.requestEnvelope.request.intent.slots.wake.value;
     // clovaに話す内容を作成。
     var msg = `作業を${wake}．がんばってくださいね．`;
-    
-    // full 
     const URL = "http://www.ne.jp/asahi/music/myuu/wave/musicbox.wav";
     const URL2 = "http://www.ne.jp/asahi/music/myuu/wave/springsonate.mp3"
     const URL3 = "http://www.ne.jp/asahi/music/myuu/wave/eine.mp3";
     const URL4 = "http://www.ne.jp/asahi/music/myuu/wave/menuettm.mp3";
-   
-    //return handlerInput.responseBuilder.speak(msg).audioPlay(URL).audioPlayReprompt(URL)
-    //.audioPlay(URL2).audioPlayReprompt(URL2).audioPlay(URL3).audioPlayReprompt(URL3).audioPlay(URL4).audioPlayReprompt(URL4);//.getResponse();
     return handlerInput.responseBuilder.speak(msg).audioPlay(URL).audioPlay(URL2).audioPlay(URL3)
-    .audioPlay(URL4).audioPlayReprompt(URL4);//.getResponse();
-    //return handlerInput.responseBuilder.speak(msg).reprompt(msg).getResponse();
-
+    .audioPlay(URL4).audioPlayReprompt(URL4);
   }
 }
-
 
 const DemoIntentHandler = {
   canHandle: function(handlerInput){
@@ -119,90 +90,10 @@ const DemoIntentHandler = {
     }else{
       var msg = "";
     }
-    
-
     return handlerInput.responseBuilder.speak(msg);
-
   }
 }
 
-
-/*
-function startfnc(handlerInput)
-{
-  var count = 0;
-  while(count<=5){
-    if(count == 5){
-      break;
-    }
-    setTimeout('sayhello(handlerInput)',5000);
-    count+=1;
-  }
-  var msg = "繰り返しはおわりです";
-  return handlerInput.responseBuilder.speak(msg).reprompt(msg).getResponse();
-}*/
-/*
-    //関数hello()を5秒間隔で呼び出す
-  var id = setInterval(function(){
-    countup();
-    sayhello(handlerInput);
-    
-  },1000);*/
-
-
-  // setIntervalを使う方法
-  function sleep(waitSec, callbackFunc) {
-   
-      // 経過時間（秒）
-      var spanedSec = 0;
-   
-      // 1秒間隔で無名関数を実行
-      var id = setInterval(function () {
-   
-          spanedSec++;
-   
-          // 経過時間 >= 待機時間の場合、待機終了。
-          if (spanedSec >= waitSec) {
-   
-              // タイマー停止
-              clearInterval(id);
-   
-              // 完了時、コールバック関数を実行
-              if (callbackFunc) callbackFunc();
-          }
-      }, 1000);
-   
-  }
-   
-   
-
-
-function sayhello(handlerInput){
-  const msg  = `お早うございます`;
-  return handlerInput.responseBuilder.speak(msg).reprompt(msg).getResponse();
-}
-
-//起きる音楽を流す関数
-function dontsleep(handlerInput){
-  //const URL = "http://idontwork.asia/bgm/audio.mp3"
-  //const URL = "http://www.ne.jp/asahi/music/myuu/wave/loop1.wav";
-
-  var URLs = ["http://www.ne.jp/asahi/music/myuu/wave/loop1.wav","http://www.ne.jp/asahi/music/myuu/wave/jupiter.mp3","http://www.ne.jp/asahi/music/myuu/wave/loop3.wav","http://www.ne.jp/asahi/music/myuu/wave/fanfare.mp3","http://www.ne.jp/asahi/music/myuu/wave/montagu.mp3"];
-  // fortunesの中からランダムで
-  var URL = 0;
-  URL = URLs[Math.floor(Math.random() * URLs.length)];
-
-  return handlerInput.responseBuilder.audioPlay(URL).audioPlayReprompt(URL);//.getResponse();
-}
-
-//起きる音楽を流す関数
-function saydontsleep(handlerInput,finish){
-  const msg  = `まだ${finish}の時間ではありません．起きてください．このあとに音楽が流れます`;
-  return handlerInput.responseBuilder.speak(msg).reprompt(msg);
-}
-
-
-  
 const errorHandler = {
   canHandle: function(handlerInput){
     return true;
@@ -211,6 +102,30 @@ const errorHandler = {
     var msg = "えらー";
     return handlerInput.responseBuilder.speak(msg).reprompt(msg).getResponse();
   }
+}
+
+//起きる音楽をランダムに流す関数
+function dontsleep(handlerInput){
+  var URLs = ["http://www.ne.jp/asahi/music/myuu/wave/loop1.wav","http://www.ne.jp/asahi/music/myuu/wave/jupiter.mp3","http://www.ne.jp/asahi/music/myuu/wave/loop3.wav","http://www.ne.jp/asahi/music/myuu/wave/fanfare.mp3","http://www.ne.jp/asahi/music/myuu/wave/montagu.mp3"];
+  var URL = 0;
+  URL = URLs[Math.floor(Math.random() * URLs.length)];
+  return handlerInput.responseBuilder.audioPlay(URL).audioPlayReprompt(URL);
+}
+
+function saydontsleep(handlerInput,finish){
+  const msg  = `まだ${finish}の時間ではありません．起きてください．このあとに音楽が流れます`;
+  return handlerInput.responseBuilder.speak(msg).reprompt(msg);
+}
+
+function formatDate(date) {
+  const y = date.getFullYear();
+  const m = date.getMonth() + 1;
+  const d = date.getDate();
+  const day = '日月火水木金土'.charAt(date.getDay());
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+
+  return `${m}月${d}日 ${day}曜日，${hours}時${minutes}分です．気合を入れていきましょう．`;
 }
 
 exports.handler = clova.extensionBuilders
