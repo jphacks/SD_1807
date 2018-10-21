@@ -45,7 +45,7 @@ const GoodnightIntentHandler = {
     var goodnight = handlerInput.requestEnvelope.request.intent.slots.goodnight.value;
 
     // clovaに話す内容を作成。
-    var msg = `${goodnight}なさい。三回ゆっくりと深呼吸をしましょう。次に心を落ち着かせます。心を無にしていきましょう`;
+    var msg = `そろそろ寝ましょうか．${goodnight}なさい。私もそろそろ寝ますね．三回ゆっくりと深呼吸をしましょう。次に心を落ち着かせます。心を無にしていきましょう`;
     const URL = "http://www.rec-art.jp/music/wav/noise/white-noise-96000hz.wav";
     return handlerInput.responseBuilder.speak(msg).audioPlay(URL).audioPlayReprompt(URL);//.getResponse();
   }

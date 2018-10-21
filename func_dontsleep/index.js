@@ -111,6 +111,23 @@ const WakeIntentHandler = {
   }
 }
 
+
+const DemoIntentHandler = {
+  canHandle: function(handlerInput){
+    return handlerInput.requestEnvelope.isMatch('DemoIntent');
+  },
+  handle: function(handlerInput){
+    // slotsを取得
+    var wake = handlerInput.requestEnvelope.request.intent.slots.demo.value;
+    // clovaに話す内容を作成。
+    var msg = `皆さんお疲れ様です，もうすぐ私達の発表は終わりですがあと2組の発表が残っています．最後まで寝ないでききましょうね．ありがとうございました．`;
+
+    return handlerInput.responseBuilder.speak(msg);
+
+  }
+}
+
+
 /*
 function startfnc(handlerInput)
 {
@@ -176,7 +193,6 @@ function dontsleep(handlerInput){
 //起きる音楽を流す関数
 function saydontsleep(handlerInput,finish){
   const msg  = `まだ${finish}の時間ではありません．起きてください．このあとに音楽が流れます`;
-  
   return handlerInput.responseBuilder.speak(msg).reprompt(msg);
 }
 
@@ -193,6 +209,6 @@ const errorHandler = {
 }
 
 exports.handler = clova.extensionBuilders
-  .addRequestHandlers(LaunchRequestHandler,SessionEndedRequestHandler,ClovaGuideIntentHandler,FinishIntentHandler,WakeIntentHandler)
+  .addRequestHandlers(LaunchRequestHandler,SessionEndedRequestHandler,ClovaGuideIntentHandler,FinishIntentHandler,DemoIntentHandler,WakeIntentHandler)
   .addErrorHandlers(errorHandler)
   .lambda()
